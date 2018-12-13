@@ -6,9 +6,11 @@
 
     <StackLayout>
         <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
+        <Label Text="Use your fingerprint" 
            HorizontalOptions="Center"
            VerticalOptions="CenterAndExpand" />
+        <Button Text="Use finger" BorderRadius="25"
+                BackgroundColor=" #17a589 "/>
     </StackLayout>
 
 </ContentPage>
