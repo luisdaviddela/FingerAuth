@@ -9,7 +9,9 @@
         <Label Text="Use your fingerprint" 
            HorizontalOptions="Center"
            VerticalOptions="CenterAndExpand" />
+        
         <Button Text="Use finger" BorderRadius="25"
+                Clicked="Button_Clicked"
                 BackgroundColor=" #17a589 "/>
     </StackLayout>
 

@@ -13,5 +13,26 @@ namespace FingerForms
         {
             InitializeComponent();
         }
+
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+            try
+            {
+                bool statics = DependencyService.Get<IFingerService>().Auth();
+
+                //if (statics)
+                //{
+                //    Application.Current.MainPage.DisplayAlert("ok", "true", "Ok");
+                //}
+                //else
+                //{
+                //    Application.Current.MainPage.DisplayAlert("ok", "false", "Ok");
+                //}
+            }
+            catch (Exception ex)
+            {
+                Application.Current.MainPage.DisplayAlert("ok",ex.Message,"Ok");
+            }
+        }
     }
 }
