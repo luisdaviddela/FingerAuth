@@ -18,7 +18,7 @@ namespace FingerForms.iOS
             bool aut = false;
             var context = new LAContext();
             NSError AuthError;
-            var localizedReason = new NSString("To add a new chore");
+            //var localizedReason = new NSString("To add a new chore");
 
             if (context.CanEvaluatePolicy(LAPolicy.DeviceOwnerAuthenticationWithBiometrics, out AuthError))
             {
@@ -36,7 +36,7 @@ namespace FingerForms.iOS
                         }
                     });
                 });
-                context.EvaluatePolicy(LAPolicy.DeviceOwnerAuthenticationWithBiometrics, localizedReason, replyHandler);
+                //context.EvaluatePolicy(LAPolicy.DeviceOwnerAuthenticationWithBiometrics, localizedReason, replyHandler);
             };
             return aut;
         }

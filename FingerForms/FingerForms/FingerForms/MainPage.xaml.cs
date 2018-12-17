@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Plugin.Fingerprint;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,24 +15,23 @@ namespace FingerForms
             InitializeComponent();
         }
 
-        private void Button_Clicked(object sender, EventArgs e)
+        private async void Button_Clicked(object sender, EventArgs e)
         {
             try
             {
-                bool statics = DependencyService.Get<IFingerService>().Auth();
-
-                //if (statics)
+                var result = await CrossFingerprint.Current.AuthenticateAsync("Prove you have fingers!");
+                //if (result.Authenticated)
                 //{
-                //    Application.Current.MainPage.DisplayAlert("ok", "true", "Ok");
+                //    await Application.Current.MainPage.DisplayAlert("Message", "Success", "Ok");
                 //}
                 //else
                 //{
-                //    Application.Current.MainPage.DisplayAlert("ok", "false", "Ok");
+                //    await Application.Current.MainPage.DisplayAlert("Message", "Incorrect", "Ok");
                 //}
             }
             catch (Exception ex)
             {
-                Application.Current.MainPage.DisplayAlert("ok",ex.Message,"Ok");
+                await Application.Current.MainPage.DisplayAlert("Message",ex.Message,"Ok");
             }
         }
     }
